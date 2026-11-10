@@ -1,0 +1,81 @@
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.content {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 1.5rem;
+  /* Reserva o espaço do botão de tema nas laterais para o texto não encostar nele. */
+  padding: 0 3.5rem;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+}
+
+.hint {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.themeSlot {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+}
+
+.count,
+.empty {
+  color: var(--muted);
+}
+
+/* Cabeçalho da lista: usa as mesmas colunas dos cards para alinhar os títulos. */
+.columns {
+  display: grid;
+  grid-template-columns: var(--list-columns);
+  gap: 1rem;
+  padding: 0 calc(1.25rem + 1px) 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Grade responsiva sem media queries: as colunas se ajustam à largura. */
+.grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.rows {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 720px) {
+  .columns {
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+.search {
+  position: relative;
+  flex: 1 1 240px;
+  color: var(--muted);
+}
+
+.search svg {
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.search input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 1rem 0 2.6rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.search input::placeholder {
+  color: var(--muted);
+}

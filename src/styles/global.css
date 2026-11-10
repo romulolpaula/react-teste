@@ -1,0 +1,69 @@
+/* Tokens de cor: o tema escuro segue a identidade da referência (#0b1120 + #00aeef). */
+:root,
+:root[data-theme='dark'] {
+  --bg: #0b1120;
+  --surface: #121a2f;
+  --border: #25304a;
+  --text: #ffffff;
+  --muted: #a3afc7;
+  --accent: #00aeef;
+  --on-accent: #04101f;
+  --overlay: rgb(3 7 18 / 0.7);
+  --list-columns: 44px minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) 16px;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --border: #d5deeb;
+  --text: #0b1120;
+  --muted: #4b5a75;
+  --accent: #0069a8; /* azul mais escuro para manter contraste AA sobre fundo claro */
+  --on-accent: #ffffff;
+  --overlay: rgb(11 17 32 / 0.55);
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Google Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Classe utilitária para texto lido apenas por leitores de tela. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
